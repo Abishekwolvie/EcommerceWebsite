@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+    <style>
+        body{
+
+            background-color: beige;
+        }
+        div{
+
+            width: 30%;
+            height: auto;
+            margin: auto;
+            border: 2px solid black;
+           
+            background-color: bisque;
+        }
+        div table{
+            margin: auto;
+            
+        }
+        th,td,.erbox{
+
+            height: 60px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .erbox{
+
+            color: red;
+        }
+        input{
+
+            height: 20px;
+        }
+        input[type=submit]{
+
+            height: 30px;
+            width: 100px;
+            font-size: 20px;
+            
+        }
+
+        p{
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+
+        }
+        span,a{
+
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+
+
+        }
+    </style>
+</head>
+<body>
+    <center><p>Welcome to Laptop Store</p></center>
+    <div>
+        <form action="" onsubmit="return regval()">
+            <table width="80%" >
+                <tr>
+                    <th colspan="2">Register here</th>
+                </tr>
+                <tr>
+                    <th>Enter your email id</th>
+                    <th><input type="email" name="uemail" id="usremail" placeholder="useremail"></th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
+                </tr>
+                <tr>
+                    <th>Enter username</th>
+                    <th><input type="text" name="uname" id="usrname" placeholder="username"></th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
+                </tr>
+                <tr>
+                    <th>Enter the password</th>
+                    <th><input type="password" name="upass" id="usrpass" placeholder="password"></th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
+                </tr>
+                <tr>
+                    <th>Confirm password</th>
+                    <th><input type="password" id="cnfusrpass" placeholder="Confirm password"></th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
+                </tr>
+                <tr>
+                    <th colspan="2"><input type="submit"></th>
+                </tr>
+            </table>
+        </form>
+        <center> <span>Existing user? <a href="login.html">Login</a></span></center>
+       
+
+
+    </div>
+    <script>
+        function regval()
+        {
+            var email=document.getElementById("usremail");
+            var cnfuserpassword=document.getElementById("cnfusrpass");
+            
+            var username=document.getElementById("usrname");
+            var userpassword=document.getElementById("usrpass");
+
+            var sp=document.getElementsByClassName("erbox");
+        
+        //email
+            if(email.value=="")
+            {
+                sp[0].innerHTML="Enter the email";
+                return false;
+            }
+            else
+            {
+                sp[0].innerHTML="";
+                
+            }
+        
+        //username
+            if(username.value==""){
+
+                sp[1].innerHTML="Enter the username"
+                return false;
+            }
+            else
+            {
+                sp[1].innerHTML="";
+            }
+
+        //password
+
+            if(userpassword.value==""){
+                sp[2].innerHTML="Enter the password";
+                return false;
+            }
+            else
+            {
+                sp[2].innerHTML="";
+            }
+
+        //confirm password
+
+            if(cnfuserpassword.value==""){
+                sp[3].innerHTML="Enter the password";
+                return false;
+            }
+            else
+            {
+                sp[3].innerHTML="";
+            }
+
+        //confim password and password check
+
+            if(userpassword.value!=cnfuserpassword.value){
+                sp[3].innerHTML="Password and confirm password should match";
+                return false;
+
+            }
+            else
+            {
+                sp[3].innerHTML="";
+            }
+
+
+        }
+    </script>
+
+</body>
+</html>
