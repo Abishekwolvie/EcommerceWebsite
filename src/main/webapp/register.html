@@ -62,7 +62,7 @@
 <body>
     <center><p>Welcome to Laptop Store</p></center>
     <div>
-        <form action="" onsubmit="return regval()">
+        <form action="Register" method="post" onsubmit="return regval()">
             <table width="80%" >
                 <tr>
                     <th colspan="2">Register here</th>
@@ -75,15 +75,8 @@
                     <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
                 </tr>
                 <tr>
-                    <th>Enter username</th>
-                    <th><input type="text" name="uname" id="usrname" placeholder="username"></th>
-                </tr>
-                <tr>
-                    <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
-                </tr>
-                <tr>
                     <th>Enter the password</th>
-                    <th><input type="password" name="upass" id="usrpass" placeholder="password"></th>
+                    <th><input type="password" name="rupass" id="usrpass" placeholder="password"></th>
                 </tr>
                 <tr>
                     <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
@@ -91,6 +84,13 @@
                 <tr>
                     <th>Confirm password</th>
                     <th><input type="password" id="cnfusrpass" placeholder="Confirm password"></th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
+                </tr>
+                <tr>
+                    <th>Mobile Number</th>
+                    <th><input type="number" id="mobno" name="rusermobno" placeholder="Mobile number"></th>
                 </tr>
                 <tr>
                     <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
@@ -128,10 +128,10 @@
                 
             }
         
-        //username
-            if(username.value==""){
+        //password
 
-                sp[1].innerHTML="Enter the username"
+            if(userpassword.value==""){
+                sp[1].innerHTML="Enter the password";
                 return false;
             }
             else
@@ -139,9 +139,9 @@
                 sp[1].innerHTML="";
             }
 
-        //password
+        //confirm password
 
-            if(userpassword.value==""){
+            if(cnfuserpassword.value==""){
                 sp[2].innerHTML="Enter the password";
                 return false;
             }
@@ -150,28 +150,35 @@
                 sp[2].innerHTML="";
             }
 
-        //confirm password
-
-            if(cnfuserpassword.value==""){
-                sp[3].innerHTML="Enter the password";
-                return false;
-            }
-            else
-            {
-                sp[3].innerHTML="";
-            }
-
         //confim password and password check
 
             if(userpassword.value!=cnfuserpassword.value){
-                sp[3].innerHTML="Password and confirm password should match";
+                sp[2].innerHTML="Password and confirm password should match";
                 return false;
 
             }
             else
             {
-                sp[3].innerHTML="";
+                sp[2].innerHTML="";
             }
+         //mobile number
+         var exp=/^[6-9]{1}[0-9]{9}$/;
+         var mob=document.getElementById("mobno");
+         
+         if(mob.value=="")
+         {
+			 sp[3].innerHTML="Enter the mobile number";
+			 return false;
+		 }
+		 else if(exp.test(mob.value)==false)
+		 {
+			sp[3].innerHTML="Invalid format";
+			 return false;
+		 }
+		 else
+		 {
+			 sp[3].innerHTML="";
+		 }
 
 
         }
