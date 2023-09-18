@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ecommerce</title>
+<title>Insert title here</title>
     <style>
         body{
 
@@ -60,23 +60,23 @@
     </style>
 </head>
 <body>
-    <center><p>Welcome to Laptop Store</p></center>
+	    <center><p>Welcome admin</p></center>
     <div>
-        <form action="Login" method="post" onsubmit="return loginval()">
+        <form action="Adminlog" method="post" onsubmit="return loginval()">
             <table width="80%" >
                 <tr>
                     <th colspan="2">Login here</th>
                 </tr>
                 <tr>
                     <th>Enter email</th>
-                    <th><input type="email" name="useremail" id="usrname" placeholder="username"></th>
+                    <th><input type="email" name="adminemail" id="usrname" placeholder="username"></th>
                 </tr>
                 <tr>
                     <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
                 </tr>
                 <tr>
                     <th>Enter the password</th>
-                    <th><input type="password" name="upass" id="usrpass" placeholder="password"></th>
+                    <th><input type="password" name="adminpass" id="usrpass" placeholder="password"></th>
                 </tr>
                 <tr>
                     <th colspan="2" style="height: 10px;"><span class="erbox"></span></th>
@@ -86,14 +86,42 @@
                 </tr>
             </table>
         </form>
-        <center> <span>Don't have an account? <a href="register.html">Register here</a></span></center>
-        <br><br>
-        <center> <span>Admin login<a href="adminlogin.html">click here</a></span></center>
-       
+         <center> <span>User login<a href="login.html">click here</a></span></center>
+        
 
 
     </div>
-    <script src="login.js">
+    <script >
+		function loginval()
+        {
+            
+            errormsg=document.getElementsByClassName("erbox");
+
+            //username
+
+            username=document.getElementById("usrname");
+            if(username.value=="")
+            {
+                errormsg[0].innerHTML="Enter the username";
+                return false;
+            }
+            else{
+                errormsg[0].innerHTML="";
+            }
+
+            //passwor
+
+            password=document.getElementById("usrpass");
+            if(password.value=="")
+            {
+                errormsg[1].innerHTML="Enter the password";
+                return false;
+            }
+            else
+            {
+                errormsg[1].innerHTML="";
+            }
+        }
 
     </script>
 
