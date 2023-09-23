@@ -1,3 +1,4 @@
+
 @charset "ISO-8859-1";
 
 .main{
@@ -6,7 +7,7 @@
     height: auto;
     background-color: gray;
 }
-#navbar,#reg,#imgslider,#shipping,#ourproducts,#offer,#address{
+#navbar,#reg{
     width: 100%;
 
 }
@@ -72,52 +73,8 @@
     font-size: 20px;
 }
 
-#imgslider{
-
-    height: 600px;
-    background-image: url(laptopmobilecover.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 600px;
-
-}
-
-#shipping{
- 
-
- 
-    height: 300px;
-    background-color: white;
-}
-
-#sh1,#sh2,#sh3,#sh4{
-  
-margin-top: 100px;
-    display: inline-block;
-    margin-left: 200px;
-
-  
-   
-}
-
-#ourproducts{
 
 
-    height: auto;
-    background-image: url("bgimage.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    border-radius: 5px;
-}
-
-#productslist{
-    height: 900px;
-    background-color: bisque;
-    
-
-
-}
 
 #viewproducts{
 	
@@ -126,27 +83,29 @@ margin-top: 100px;
 	background-color: bisque;
 }
 
-#ourproducts img{
-
-    width: 300px;
-    height: 300px;
-    margin-top: 70px;
-    margin-left: 60px;
-    margin-bottom: 70px;
-    border-radius: 5px;
+#viewproducts table{
+	
+	width: 100%;
+	height: auto;
+	border: 2px solid black;
 }
 
-#ourproducts img:hover{
+table .colhead{
+	
+	height: 100px;
+	background-color: chocolate;
+	border: 2px solid black;
+	
+}
 
-    -webkit-transform: scale(1.2,1.2);
+table tr,th{
+	height: 50px;
+	
+	border: 2px solid black;
+	
 }
 
 
-#offer{
-
-    height: 400px;
-    background-color: blueviolet;
-}
 
 #reg{
 
