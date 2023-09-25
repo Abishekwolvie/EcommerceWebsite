@@ -23,19 +23,10 @@ public class Adminlogin extends Dbcon{
 		return res;
 	}
 	
-	public ArrayList<ProductList> viewproducts() throws SQLException
-	{
-		ArrayList<ProductList> prl=new ArrayList<ProductList>();
-		Statement s= con.createStatement();
-		ResultSet rs=s.executeQuery("select * from productspec");
-		while(rs.next())
-		{
-			ProductList pl=new ProductList(rs.getString("pmodelname"),rs.getString("Graphicscard"),
-					rs.getString("processor"),rs.getString("ram"),rs.getLong("productprice"));
-			prl.add(pl);
-			
-		}
-		return prl;
-	}
+
+	
+
+	
+	
 
 }

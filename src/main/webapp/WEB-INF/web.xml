@@ -49,4 +49,14 @@
     <servlet-name>Insertproducts</servlet-name>
     <url-pattern>/Insertproducts</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Cart</display-name>
+    <servlet-name>Cart</servlet-name>
+    <servlet-class>servpack.Cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cart</servlet-name>
+    <url-pattern>/Cart</url-pattern>
+  </servlet-mapping>
 </web-app>

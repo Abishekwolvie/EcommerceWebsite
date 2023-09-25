@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="productstyle.css">
 </head>
 <body>
-<jsp:useBean id="ad" class="dbcode.Adminlogin"></jsp:useBean>
+<jsp:useBean id="ad" class="dbcode.Dbcon"></jsp:useBean>
 <%@ page import="dbcode.ProductList,java.util.*" %>
     <div class="main">
         <nav id="navbar">
@@ -31,6 +31,7 @@
 		        	<th class="colhead">Processor</th>
 		        	<th class="colhead">Ram</th>
 		        	<th class="colhead">Price</th>
+		        	<th class="colhead">Add to Cart</th>
         		</tr>
         			<%
         				ArrayList<ProductList> pl=ad.viewproducts();
@@ -38,6 +39,7 @@
         				while(it.hasNext())
         				{
         					ProductList p=it.next();
+        					String prmname=p.getModelname();
         			%>
         			<tr>
         				<th><%=p.getModelname()%></th>
@@ -45,6 +47,8 @@
         				<th><%=p.getProcessor() %></th>
         				<th><%=p.getRam() %></th>
         				<th><%=p.getPrice() %></th>
+        				<th> <a href="Cart?prid=<%=p.getPid() %>" ><button>Add to cart</button>  </a>  </th>  <!-- --Add the products to the cart and send the product id to 
+        																												Cart servlet -->
         			</tr>
         			<%
         				}
