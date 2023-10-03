@@ -47,8 +47,8 @@
         				<th><%=p.getProcessor() %></th>
         				<th><%=p.getRam() %></th>
         				<th><%=p.getPrice() %></th>
-        				<th> <a href="Cart?prid=<%=p.getPid() %>" ><button>Add to cart</button>  </a>  </th>  <!-- --Add the products to the cart and send the product id to 
-        																												Cart servlet -->
+        				<th> <a href="Cart?prid=<%=p.getPid() %>" ><button>Add to cart</button>  </a>  </th>  <!-- --send the product id to 
+        																												Cart servlet to add the products to cart-->
         			</tr>
         			<%
         				}

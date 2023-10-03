@@ -44,7 +44,7 @@ public class Cart extends HttpServlet {
 		ArrayList<ProductList> prl;
 		try {
 			Dbcon dbcon=new Dbcon();
-			prl=dbcon.viewproductsbyid(productid); //method to view products by id
+			prl=dbcon.viewproductsbyid(productid); //method to get  products by id
 			Iterator<ProductList> it=prl.iterator();
 			ProductList p;
 			int res=0;

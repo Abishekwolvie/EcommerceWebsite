@@ -91,5 +91,22 @@ public class Dbcon {
 		return res;
 	}
 	
+	public ArrayList<Addtocart> getproductlistfromcart(String useremailid) throws SQLException
+	{
+		ArrayList<Addtocart> cl=new ArrayList<Addtocart>();
+		
+		PreparedStatement ps=con.prepareStatement("select *from cart where useremail=?");
+		ps.setString(1, useremailid);
+		ResultSet rs=ps.executeQuery();
+		while(rs.next())
+		{
+			Addtocart act=new Addtocart(rs.getString("useremail"),rs.getInt("productid"),
+					rs.getString("productmodelname"),rs.getString("prgraphicscard"),rs.getString("prprocessor"),rs.getString("prram"),rs.getLong("prproductprice"));
+			cl.add(act);
+		}
+		
+		return cl;
+	}
+	
 
 }
