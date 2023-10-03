@@ -91,7 +91,7 @@ public class Dbcon {
 		return res;
 	}
 	
-	public ArrayList<Addtocart> getproductlistfromcart(String useremailid) throws SQLException
+	public ArrayList<Addtocart> getproductlistfromcart(String useremailid) throws SQLException //method to get products from the cart based on the useremail
 	{
 		ArrayList<Addtocart> cl=new ArrayList<Addtocart>();
 		
