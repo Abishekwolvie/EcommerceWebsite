@@ -108,5 +108,29 @@ public class Dbcon {
 		return cl;
 	}
 	
+	public int removefromcart(String username,int productid) throws SQLException // method to remove the product from cart
+	{
+		int res=0;
+		PreparedStatement ps=con.prepareStatement("delete from cart where productid=? and useremail=?");
+		ps.setInt(1, productid);
+		ps.setString(2, username);
+		res=ps.executeUpdate();
+		return res;
+	}
+	
+	public long calculatebill(String username)throws SQLException //method to get the products from the cart and calculate the total amount
+	{
+		long l=0;
+		
+		PreparedStatement ps=con.prepareStatement("select  prproductprice from cart where useremail=?");
+		ps.setString(1, username);
+		ResultSet rs=ps.executeQuery();
+		while(rs.next())
+		{
+			l+=rs.getLong("prproductprice");
+		}
+		return l;
+	}
+	
 
 }

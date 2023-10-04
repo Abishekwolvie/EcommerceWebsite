@@ -15,11 +15,11 @@
             <span>E COMMERCE</span>
             <div id="anchorlinks">
                 <a href="home.html">Home</a>
-                <a href="">Order History</a>
+            
             </div>
             <div id="icons">
                 <a href="login.html"><img src="user.png" alt=""></a>
-                <img src="cart.png" alt="">
+                <a href="ShoppingCart.jsp"><img src="cart.png" alt=""></a>
             </div>
 
         </nav>
@@ -39,7 +39,7 @@
         				while(it.hasNext())
         				{
         					ProductList p=it.next();
-        					String prmname=p.getModelname();
+        					
         			%>
         			<tr>
         				<th><%=p.getModelname()%></th>
@@ -47,7 +47,7 @@
         				<th><%=p.getProcessor() %></th>
         				<th><%=p.getRam() %></th>
         				<th><%=p.getPrice() %></th>
-        				<th> <a href="Cart?prid=<%=p.getPid() %>" ><button>Add to cart</button>  </a>  </th>  <!-- --send the product id to 
+        				<th> <a href="Cart?prid=<%=p.getPid() %>" ><button style="height:35px; background-color:green; color:white; border-radius:10px">Add to cart</button>  </a>  </th>  <!-- --send the product id to 
         																												Cart servlet to add the products to cart-->
         			</tr>
         			<%

@@ -59,4 +59,14 @@
     <servlet-name>Cart</servlet-name>
     <url-pattern>/Cart</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemovefromCart</display-name>
+    <servlet-name>RemovefromCart</servlet-name>
+    <servlet-class>servpack.RemovefromCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemovefromCart</servlet-name>
+    <url-pattern>/RemovefromCart</url-pattern>
+  </servlet-mapping>
 </web-app>

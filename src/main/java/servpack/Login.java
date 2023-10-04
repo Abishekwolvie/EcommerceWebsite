@@ -43,7 +43,7 @@ public class Login extends HttpServlet {
 			{
 				RequestDispatcher rd=request.getRequestDispatcher("home.html");
 				HttpSession s=request.getSession();
-				s.setAttribute("Username", useremail);
+				s.setAttribute("Username", useremail);   // save the user email in the session for session tracking
 				rd.forward(request, response);		
 			}
 			else
